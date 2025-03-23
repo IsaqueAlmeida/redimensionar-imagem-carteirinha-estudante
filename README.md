@@ -45,17 +45,18 @@ Este projeto consiste em um script em Python que utiliza a biblioteca OpenCV par
 
 - **Redimensionamento**:
     ```python
-    imagem_redimensionada_frente = cv2.resize(imagem_frente, (largura, altura))
-    imagem_redimensionada_verso = cv2.resize(imagem_verso, (largura, altura))
+    imagem_redimensionada_frente = cv2.resize(imagem_frente, (largura, altura), interpolation=cv2.INTER_CUBIC)
+    imagem_redimensionada_verso = cv2.resize(imagem_verso, (largura, altura), interpolation=cv2.INTER_CUBIC)
     ```
     As imagens são redimensionadas para as dimensões definidas (508px de largura e 321px de altura).
+    O interpolation junto com o INTER_CUBIC, deixa a imagem com mais qualidade ao ser redimensionado.
 
 - **Salvamento das Imagens**:
     ```python
-    cv2.imwrite(f'{img_salvo_frente}', imagem_redimensionada_frente)
-    cv2.imwrite(f'{img_salvo_verso}', imagem_redimensionada_verso)
+    cv2.imwrite(f'{img_salvo_frente}', imagem_redimensionada_frente, [cv2.IMWRITE_JPEG_QUALITY, 90])
+    cv2.imwrite(f'{img_salvo_verso}', imagem_redimensionada_verso, [cv2.IMWRITE_JPEG_QUALITY, 90])
     ```
-    As imagens redimensionadas são salvas com novos nomes.
+    As imagens redimensionadas são salvas com novos nomes. E a qualidade da imagem é melhorada em 90% ao ser redimensionada.
 
 - **Mensagens de Sucesso**:
     O script imprime uma mensagem indicando que as imagens foram redimensionadas e salvas com sucesso.

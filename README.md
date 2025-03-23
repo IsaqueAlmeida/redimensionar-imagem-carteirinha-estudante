@@ -43,12 +43,18 @@ Este projeto consiste em um script em Python que utiliza a biblioteca OpenCV par
     ```
     Caso as imagens não sejam carregadas corretamente, o script exibe uma mensagem de erro e interrompe a execução.
 
+- **Largura e Altura**
+    ```python
+    largura, altura = 1012, 637
+    ```
+    Dimensão final da imagem que for redimensionado: 1012px por 637px.
+
 - **Redimensionamento**:
     ```python
     imagem_redimensionada_frente = cv2.resize(imagem_frente, (largura, altura), interpolation=cv2.INTER_CUBIC)
     imagem_redimensionada_verso = cv2.resize(imagem_verso, (largura, altura), interpolation=cv2.INTER_CUBIC)
     ```
-    As imagens são redimensionadas para as dimensões definidas (508px de largura e 321px de altura).
+    As imagens são redimensionadas para as dimensões definidas (1012px de largura e 637px de altura).
     O interpolation junto com o INTER_CUBIC, deixa a imagem com mais qualidade ao ser redimensionado.
 
 - **Salvamento das Imagens**:

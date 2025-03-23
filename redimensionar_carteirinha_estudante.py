@@ -8,7 +8,7 @@ if imagem_frente is None and imagem_verso is None:
     exit()
 
 # Definindo dimensões
-largura, altura = 508, 321
+largura, altura = 1012, 637
 
 # Redimensionando a imagem
 imagem_redimensionada_frente = cv2.resize(imagem_frente, (largura, altura),
